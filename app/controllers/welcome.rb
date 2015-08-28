@@ -1,3 +1,3 @@
 get '/' do
-  "welcome to Survey Pony"
+  erb :'/home'
 end
