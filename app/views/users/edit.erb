@@ -1,0 +1,7 @@
+<div id='profile-edit-form'>
+  <form action='/users' method='POST'>
+    <input type="hidden" name="_method" value="PUT" />
+    <%= erb :'users/_form' %>
+    <input type='submit' value='Update Profile'/>
+  </form>
+</div>
