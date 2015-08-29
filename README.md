@@ -1,17 +1,17 @@
 # Survey Pony
 ## A Survey Monkey Clone
 
-#### To Use Survey Pony
+#### Instructions
 
-Follow these instructions:
+Follow these instructions to get up and running:
 
-Clone the repo in your terminal
-`bundle install` 
-`bundle execute rake db:create`
-`bundle execute rake db:migrate`
-`bundle execute rake db:seed`
-`bundle execute shotgun` to start the server
-Open your browser and go to your local host. By default shotgun uses `localhost:9393/`
+#Clone the repo in your terminal
+#`bundle install`
+#`bundle execute rake db:create`
+#`bundle execute rake db:migrate`
+#`bundle execute rake db:seed`
+#`bundle execute shotgun` to start the server
+#Open your browser and go to your local host. By default shotgun uses `localhost:9393/`
 
 #### Routes
 Use these routes for reference.
