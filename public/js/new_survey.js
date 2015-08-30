@@ -9,7 +9,7 @@ $('document').ready(function(){
     }).done(function(response){
       $('#add-choice-div').append(response);
     }).fail(function() {
-      console.log("Didn't add new choice correctly")
+      console.log("Didn't add new question correctly")
     });
 
    $('#add-choice-div').on('submit','#new-choice', function(e){
@@ -23,7 +23,7 @@ $('document').ready(function(){
         $('#new-choice').remove();
         $('#add-question').replaceWith(response);
       }).fail(function() {
-        console.log("Didn't add choice correctly")
+        console.log("Didn't add new choices correctly")
       });
 
       });

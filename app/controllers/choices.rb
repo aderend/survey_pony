@@ -4,20 +4,14 @@ get '/questions/:id/choices/new' do
 end
 
 post '/choices' do
-  # binding.pry
   @question = Question.find_by(id: params[:question_id])
   @survey = @question.survey
-  @choice = @question.choices.build(body: params[:choice][:body])
-  if @choice.save
-    if request.xhr?
-      erb :'questions/_form', layout: false, locals: {survey: @survey}
-    else
-    # @question.add_choices(params[:choice])
-    redirect "/surveys/#{@question.survey.id}/questions/new"
-    end
+  @choices = @question.add_choices(params[:choice])
+  if request.xhr?
+    erb :'questions/_form', layout: false, locals: {survey: @survey}
   else
-    "error"
-  end    
+    redirect "/surveys/#{@question.survey.id}/questions/new"
+  end  
 end
 
 get '/questions/:id/choices/edit' do
