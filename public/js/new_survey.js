@@ -10,34 +10,43 @@ $('document').ready(function(){
       $('#add-choice-div').append(response);
       $('#finish-survey-form').toggle();
       $('#question-submit').hide();
-      // debugger
     }).fail(function() {
       console.log("Didn't add new question correctly")
     });
 
-   $('#add-choice-div').on('submit','#new-choice', function(e){
-      e.preventDefault();
-      $this = $(this);
-      $.ajax({
-        url: $this.attr('action'),
-        data: $this.serialize(),
-        method: $this.attr('method')
-      }).done(function(response){
-        $('#new-choice').remove();
-        $('#finish-survey-form').hide();
-        $('#add-question').replaceWith(response);
-        $('#question-submit').show();
-      }).fail(function() {
-        console.log("Didn't add new choices correctly")
-      });
-
-      });
-   });
+  $('#add-choice-div').on('submit','#new-choice', function(e){
+    e.preventDefault();
+    $this = $(this);
+    $.ajax({
+      url: $this.attr('action'),
+      data: $this.serialize(),
+      method: $this.attr('method')
+    }).done(function(response){
+      $('#new-choice').remove();
+      $('#finish-survey-form').hide();
+      $('#add-question').replaceWith(response);
+      $('#question-submit').show();
+    }).fail(function() {
+      console.log("Didn't add new choices correctly")
+    });
+    });
+  });
 
   $("#finish-survey").on("submit", function(e){
     e.preventDefault();
-    debugger
-    $choices = $(this);
+    $this = $(this)
+    $choices = $this.parent().parent().find("#new-choice");
+    // debugger
+      debugger
+    $.ajax({
+      url: $choices.attr('action'),
+      data: $choices.serialize() + "&" + $this.serialize(),
+      method: $choices.attr('method')
+    }).done(function(response){
+      console.log("worked")
+    }).fail(function() {
+      console.log("Didn't submit survey properly")
+    });
   });
 
   });
