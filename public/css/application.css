@@ -9,13 +9,31 @@ header {
 
 body {
   background-color: #1EB9BF;
+  font-family: 'Roboto', sans-serif;
 }
+
+.justright {
+  float:right;
+}
+
+.justleft {
+
+  float:left;
+}
+
 
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 800px;
   padding: 0px 20px 20px 20px;
   background-color: #bbdde4;
+}
+
+img {
+  height: 90px;
+  bottom: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 th {
@@ -35,7 +53,7 @@ th {
      border:none;
      padding:0!important;
      font: inherit;
-    color: #f9f4eb;
+    color: #DA273A;
 }
 
 /*
