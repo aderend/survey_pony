@@ -17,7 +17,7 @@ end
 
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
-  redirect "/" unless authorized?(@user.id)
+  redirect "/" unless authorized?(current_user.id)
   erb :'users/show'
 end
 
