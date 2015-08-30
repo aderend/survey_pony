@@ -8,7 +8,9 @@ $('document').ready(function(){
       method: $this.attr('method')
     }).done(function(response){
       $('#add-choice-div').append(response);
+      $('#finish-survey-form').toggle();
       $('#question-submit').hide();
+      // debugger
     }).fail(function() {
       console.log("Didn't add new question correctly")
     });
@@ -22,6 +24,7 @@ $('document').ready(function(){
         method: $this.attr('method')
       }).done(function(response){
         $('#new-choice').remove();
+        $('#finish-survey-form').hide();
         $('#add-question').replaceWith(response);
         $('#question-submit').show();
       }).fail(function() {
@@ -30,4 +33,11 @@ $('document').ready(function(){
 
       });
    });
+
+  $("#finish-survey").on("submit", function(e){
+    e.preventDefault();
+    debugger
+    $choices = $(this);
+  });
+
   });

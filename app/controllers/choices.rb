@@ -8,7 +8,11 @@ post '/choices' do
   @survey = @question.survey
   @choices = @question.add_choices(params[:choice])
   if request.xhr?
-    erb :'questions/_form', layout: false, locals: {survey: @survey}
+    if params[:finish_survey]=="true"
+      redirect "/users/current_user.id"
+    else
+      erb :'questions/_form', layout: false, locals: {survey: @survey}
+    end  
   else
     redirect "/surveys/#{@question.survey.id}/questions/new"
   end  
