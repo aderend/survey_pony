@@ -1,5 +1,9 @@
-<form id='new-choice' action="/choices" method="POST">
+
+  <form id='new-choice' action="/choices" method="POST">	
+
+  <input type="hidden" name="question_id" value="<%=@question.id%>">
   <label for="body">Choice: </label>
   <input type="text" name="choice[body]"/>
   <input type="submit" value="Add Choices" />
-</form>
+
+	</form>	

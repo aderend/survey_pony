@@ -5,20 +5,20 @@ $('document').ready(function(){
       data: $(this).serialize(),
       method: 'POST'
     }).done(function(data){
-      $('#add-choice-div').show();
+      // $('#add-choice-div').show();
       $('#add-choice-div').append(data);
       // debugger
     });
 
-   $('#add-choice-div').on('submit', function(e){
+   $('#add-choice-div').on('submit','#new-choice', function(e){
       e.preventDefault();
-      debugger
+      $this = $(this);
       $.ajax('/choices', {
-        data: $(this).serialize(),
+        data: $this.serialize(),
         method: 'POST'
-      }).done(function(data){
+      }).done(function(response){
         debugger
-        alert(data);
+        // alert(data);
       }).fail(function() {
         debugger
       });
