@@ -1,5 +1,5 @@
 $('document').ready(function(){
-  $("#add-question").on("submit", function(e){
+  $("#new-question-form").on("submit", "#add-question",function(e){
     e.preventDefault();
     $.ajax('/questions', {
       data: $(this).serialize(),
@@ -17,8 +17,8 @@ $('document').ready(function(){
         data: $this.serialize(),
         method: 'POST'
       }).done(function(response){
-        debugger
-        // alert(data);
+        $('#new-choice').hide();
+        $('#add-question').replaceWith(response);
       }).fail(function() {
         debugger
       });

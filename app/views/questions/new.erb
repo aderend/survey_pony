@@ -1,14 +1,9 @@
 <h2>Create New Question</h2>
-	<div id="new_question_form">
-		<form id='add-question' action="/questions" method="POST">
-			<%= erb :"questions/_form", locals: {question: @question} %>
-			<input type="hidden" name="survey_id" value="<%=@survey.id%>">
-			<input type="submit" value="Create Question">
-		</form>
+	<div id="new-question-form">
+			<%= erb :"questions/_form", locals: {question: @question, survey: @survey} %>
 	</div>
 	<div id='add-choice-div'>
-	<form id='new-choice' action="/choices" method="POST">	
-	</form>		
+		
 	</div>
 	<div id="finish_survey_link">
 		<a href="/surveys">Finish Survey</a>
