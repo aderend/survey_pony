@@ -8,6 +8,7 @@ $('document').ready(function(){
       method: $this.attr('method')
     }).done(function(response){
       $('#add-choice-div').append(response);
+      $('#question-submit').hide();
     }).fail(function() {
       console.log("Didn't add new question correctly")
     });
@@ -22,6 +23,7 @@ $('document').ready(function(){
       }).done(function(response){
         $('#new-choice').remove();
         $('#add-question').replaceWith(response);
+        $('#question-submit').show();
       }).fail(function() {
         console.log("Didn't add new choices correctly")
       });
