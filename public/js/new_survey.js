@@ -17,8 +17,9 @@ $('document').ready(function(){
         data: $this.serialize(),
         method: 'POST'
       }).done(function(response){
-        $('#new-choice').hide();
+        $('#new-choice').remove();
         $('#add-question').replaceWith(response);
+        debugger
       }).fail(function() {
         debugger
       });
