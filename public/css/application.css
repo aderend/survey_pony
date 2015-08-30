@@ -1,6 +1,14 @@
+header {
+  background-color: #F9F4EB;
+  display: inline-block;
+  width:100%;
+  color: #DA273A;
+  padding:0px;
+  margin:0px;
+}
+
 body {
   background-color: #1EB9BF;
-
 }
 
 .container {
@@ -30,7 +38,7 @@ th {
     color: #f9f4eb;
 }
 
-
+/*
 ul#navlist {
   padding: 0;
   margin: 0;
@@ -73,3 +81,4 @@ ul#navlist li a:hover {
   background-color: #da273a;
   color: #f9f4eb;
 }
+*/
