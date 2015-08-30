@@ -5,7 +5,9 @@ $('document').ready(function(){
       data: $(this).serialize(),
       method: 'POST'
     }).done(function(data){
-      $('#add-choice-div').toggle();
+      $('#add-choice-div').show();
+      $('#add-choice-div').append(data);
+      // debugger
     });
 
    $('#add-choice-div').on('submit', function(e){
