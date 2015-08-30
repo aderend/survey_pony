@@ -1,5 +1,6 @@
 get '/surveys/:id/questions/new' do
   @survey = Survey.find_by(id: params[:id])
+  @choice = Choice.new
   @question = Question.new
   erb :'questions/new'
 end
@@ -14,11 +15,15 @@ end
 post '/questions' do
   survey = Survey.find_by(id: params[:survey_id])
   question = survey.questions.build(survey: survey, body: params[:body])
-  if question.save
-    redirect "questions/#{question.id}/choices/new"
+  if request.xhr?
+    erb :'choices/_new_form', layout: false
   else
-    flash[:error] = question.errors.full_messages
-    redirect "surveys/#{survey.id}/questions/new"
+    if question.save
+      redirect "questions/#{question.id}/choices/new"
+    else
+      flash[:error] = question.errors.full_messages
+      redirect "surveys/#{survey.id}/questions/new"
+    end
   end
 end
 

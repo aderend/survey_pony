@@ -5,6 +5,7 @@ end
 
 get "/surveys/new" do
   @survey = Survey.new
+
   erb :"/surveys/new"
 end
 

@@ -1,5 +1,7 @@
+<div id='show-question'>
 <h1 class="title"><%=@question.survey.title%></h1>
 <p><%=@question.body%></p>
+</div>
 <form action="/selections" method="post">
   <ul class="choice-list">
   <input type="hidden" name="taken_survey_id" value="<%=@taken_survey.id%>">
