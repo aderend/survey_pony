@@ -23,7 +23,7 @@ post '/questions' do
       redirect "questions/#{question.id}/choices/new"
     end
   else
-    flash[:error] = question.errors.full_messages
+    flash[:error] = @question.errors.full_messages
     redirect "surveys/#{survey.id}/questions/new"
   end
 end
