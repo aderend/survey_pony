@@ -36,13 +36,12 @@ $('document').ready(function(){
     e.preventDefault();
     $this = $(this)
     $choices = $this.parent().parent().find("#new-choice");
-    // debugger
-      debugger
     $.ajax({
       url: $choices.attr('action'),
       data: $choices.serialize() + "&" + $this.serialize(),
       method: $choices.attr('method')
     }).done(function(response){
+      $("#create-new-survey").replaceWith(response);
       console.log("worked")
     }).fail(function() {
       console.log("Didn't submit survey properly")
