@@ -5,18 +5,27 @@
 </div>
 <div id="question_stats_list">
 	<%@survey.questions.each_with_index do |question,index|%>
-	<div id="question_stat">
-		<%=index+1%>. <%=question.body%>
-	</div>
-	<div id="choice_stat_list">
-		<%question.choices.each do |choice|%>
-		<div id="choice_stat">
-			<div><%=choice.body%><div>
-				<p><%=@survey.num_times_chosen(choice)%></p>
-				<p><%=@survey.percentage(choice)%> % </p>
+	<table>
+		<div id="question_stat">
+			<p><%=index+1%>. <%=question.body%></p>
+			<tr>
+				<th>Choice</th>
+				<th>Times Chosen</th>
+				<th>Overall Percentage</th>
+			</tr>
+		</div>
+		<div id="choice_stat_list">
+			<%question.choices.each do |choice|%>
+			<div id="choice_stat">
+				<tr>
+					<td><%=choice.body%></td>
+					<td><%=@survey.num_times_chosen(choice)%></td>
+					<td><%=@survey.percentage(choice)%> %</td>
+				</tr>
 			</div>
 			<%end%>
 		</div>
 		<%end%>
 	</div>
+</table>
 </div>

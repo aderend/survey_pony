@@ -132,3 +132,12 @@ ul#navlist li a {
 #finish-survey-form {
   display:none;
 }
+
+th, td{
+  padding: 5px;
+  width: 100%;
+}
+
+td {
+  color: #126b6b;
+}
