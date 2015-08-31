@@ -1,17 +1,13 @@
-# ruby '2.0.0'
 source 'https://rubygems.org'
 
-# PostgreSQL driver
 gem 'pg'
 
-# Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
 
 gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 
-# Use Thin for our web server
 gem 'thin'
 
 gem 'activesupport', '~>4.1'

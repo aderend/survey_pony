@@ -33,6 +33,7 @@ a {
   background-color: #bbdde4;
   border-radius: .5em;
   box-shadow: 5px 5px 5px #168986;
+  list-style-type: none;
 }
 
 .container p {
@@ -126,7 +127,7 @@ ul#navlist li a {
   padding: 0.2em 1em;
   text-decoration: none;
   border-right: 1px solid #f9f4eb;
-
+}
 
 #finish-survey-form {
   display:none;

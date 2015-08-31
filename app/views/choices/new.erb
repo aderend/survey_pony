@@ -1,11 +1,11 @@
 <h2>Create New Choices</h2>
-	<div id="new_choice_form">
-		<form action="/choices" method="POST">
-			<% 4.times.with_index do |choice, i| %>
-				<label for="body">Choice <%=i+1%>: </label>
-				<input type="text" name="choice[<%=i%>][body]">
-			<% end %>
-			<input type="hidden" name="question_id" value="<%=@question.id%>">
-			<input type="submit" value="Add Choices">
-		</form>
-	</div>
+<div id="new_choice_form">
+	<form action="/choices" method="POST">
+		<% 4.times.with_index do |choice, i| %>
+		<label for="body">Choice <%=i+1%>: </label>
+		<input type="text" name="choice[<%=i%>][body]">
+		<% end %>
+		<input type="hidden" name="question_id" value="<%=@question.id%>">
+		<input type="submit" value="Add Choices">
+	</form>
+</div>

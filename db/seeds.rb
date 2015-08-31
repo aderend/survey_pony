@@ -1,9 +1,9 @@
-bojack = User.create!(username: "bojack_horseman", email: "bojack@horse.com", password: "1234")
-carolyn = User.create!(username: "princess_carolyn", email: "caroline@cat.com", password: "1234")
-todd = User.create!(username: "todd_chavez", email: "todd@human.com", password: "1234")
-vincent = User.create!(username: "vincent_adultman", email: "vincent@human.com", password: "1234")
-sextina = User.create!(username: "sextina_aqaufina", email: "sextina@dolphin.com", password: "1234")
-neal = User.create!(username: "neal_mcbeal", email: "neal@seal.com", password: "1234")
+bojack = User.create(username: "bojack_horseman", email: "bojack@horse.com", password: "1234")
+carolyn = User.create(username: "princess_carolyn", email: "caroline@cat.com", password: "1234")
+todd = User.create(username: "todd_chavez", email: "todd@human.com", password: "1234")
+vincent = User.create(username: "vincent_adultman", email: "vincent@human.com", password: "1234")
+sextina = User.create(username: "sextina_aqaufina", email: "sextina@dolphin.com", password: "1234")
+neal = User.create(username: "neal_mcbeal", email: "neal@seal.com", password: "1234")
 
 
 survey_1 = bojack.created_surveys.create(title: "Bojack Horseman, One Trick Pony")
@@ -26,26 +26,26 @@ s1_q1_choices = ["Bojack fan club","Horsin' around fan club","Not_porn_2"]
 s1_q1_choices.each { |choice| s1_q1.choices.create(body: choice)}
 
 s1_q2_choices = ["Bojack Horseman","Daniel Radcliffe","Lance Bass"]
-s1_q2_choices.map! { |choice| s1_q2.choices.create(body: choice)}
+s1_q2_choices.each { |choice| s1_q2.choices.create(body: choice)}
 
 s1_q3_choices = ["Sara Lynn","Sextina Aquafina","Quentin Tarantullno"]
-s1_q3_choices.map! { |choice| s1_q3.choices.create(body: choice)}
+s1_q3_choices.each { |choice| s1_q3.choices.create(body: choice)}
 
 s1_q4_choices = ["Vincent Adultman","Bojack Horseman","Rutabaga Rabbitowitz"]
-s1_q4_choices.map! { |choice| s1_q4.choices.create(body: choice)}
+s1_q4_choices.each { |choice| s1_q4.choices.create(body: choice)}
 
 
 s2_q1_choices = ["Tomato","Tomato","Neither"]
 s2_q1_choices.each { |choice| s2_q1.choices.create(body: choice)}
 
 s2_q2_choices = ["Soup","Salad","Neither"]
-s2_q2_choices.map! { |choice| s2_q2.choices.create(body: choice)}
+s2_q2_choices.each { |choice| s2_q2.choices.create(body: choice)}
 
 s2_q3_choices = ["Paper","Plastic","bananas"]
-s2_q3_choices.map! { |choice| s2_q3.choices.create(body: choice)}
+s2_q3_choices.each { |choice| s2_q3.choices.create(body: choice)}
 
 s2_q4_choices = ["Potato","Potato","Potato Soup"]
-s2_q4_choices.map! { |choice| s2_q4.choices.create(body: choice)}
+s2_q4_choices.each { |choice| s2_q4.choices.create(body: choice)}
 
 
 taken_1 = TakenSurvey.create(survey_id: 1, taker_id: 3)

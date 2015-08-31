@@ -8,5 +8,4 @@ class TakenSurvey < ActiveRecord::Base
       hash[selection.choice.question.body] = selection.choice.body
     end
   end
-
 end

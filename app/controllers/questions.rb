@@ -15,7 +15,6 @@ end
 post '/questions' do
   survey = Survey.find_by(id: params[:survey_id])
   @question = survey.questions.build(survey: survey, body: params[:body])
-  # binding.pry
   if @question.save
     if request.xhr?
       erb :'choices/_new_form', layout: false, locals: {question: @question}
