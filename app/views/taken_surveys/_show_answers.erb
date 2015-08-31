@@ -1,9 +1,9 @@
-<h2 class="title">Thanks for taking the "<%= survey.title %>" survey, <%= current_user.username %>!</h2>
+<p class="title">Thanks for taking the "<%= survey.title %>" survey, <%= current_user.username %>!</p>
 <div id="thank-you-summary">
 <p>
   <% taken_summary.each do |question, answer| %>
     <p>Question: <%= question %></p>
-    <p>You chose: <%= answer %></p>
+    <p class="choice">You chose: <%= answer %></p>
   <% end %>
 </p>
 </div>

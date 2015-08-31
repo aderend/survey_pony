@@ -5,6 +5,7 @@ header {
   color: #DA273A;
   padding:0px;
   margin:0px;
+  box-shadow: 5px 5px 5px #168986;
 }
 
 body {
@@ -12,21 +13,49 @@ body {
   font-family: 'Futura', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #DA273A;
+}
+
 .justright {
   float:right;
 }
 
 .justleft {
-
   float:left;
 }
-
 
 .container {
   margin: 20px auto;
   width: 800px;
   padding: 0px 20px 20px 20px;
   background-color: #bbdde4;
+  border-radius: .5em;
+  box-shadow: 5px 5px 5px #168986;
+}
+
+.container p {
+  font-size: 1.5em;
+}
+
+.run_survey {
+  padding: 0;
+
+}
+p.title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.3em;
+}
+
+p.small {
+  font-size: 1em;
+  margin-top: .05em;
+}
+
+form {
+  padding-top: 1em;
 }
 
 img {
@@ -38,6 +67,14 @@ img {
 
 th {
   text-align: left;
+}
+
+#take_survey {
+  text-align: center;
+}
+
+.choice {
+  color: #126b6b;
 }
 
 .notice {

@@ -1,8 +1,8 @@
-<h1>Surveys</h1>
+<p class="title">Surveys</p>
 	<div id="survey_list">
 		<%@surveys.each do |survey|%>
 		<div id="survey_link">
-			<p><a href = "/surveys/<%=survey.id%>/takensurveys/new"><%=survey.title%></a>, created by <%=survey.creator.username%></p>
+			<a href = "/surveys/<%=survey.id%>/takensurveys/new"><%=survey.title%></a><p class="small">created by <%=survey.creator.username%></p>
 		</div>
 		<%end%>
 	</div>
