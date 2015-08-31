@@ -20,7 +20,7 @@ end
 
 get '/questions/:id/choices/edit' do
   @question = Question.find_by(id: params[:id])
-  redirect "/" unless authorized?(@question.user.id)
+  redirect "/" unless authorized?(@question.survey.creator.id)
 	@choices = @question.choices
 	erb :'choices/edit'
 end

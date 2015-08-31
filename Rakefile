@@ -137,7 +137,9 @@ task "console" do
   exec "pry -r./config/environment"
 end
 
-desc "Run the specs"
-RSpec::Core::RakeTask.new(:spec)
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+end
 
 task :default  => :specs

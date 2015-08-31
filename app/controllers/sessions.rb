@@ -1,5 +1,4 @@
 post '/session' do
-  # binding.pry
   if user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
     session[:user_id] = user.id
     redirect '/'

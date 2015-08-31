@@ -4,7 +4,7 @@
 	<p>Number of times survey has been taken : <%=@survey.total_takers%></p>
 </div>
 <div id="question_stats_list">
-	<%@survey.questions.each_with_index do |question,index|%>	
+	<%@survey.questions.each_with_index do |question,index|%>
 	<div id="question_stat">
 		<%=index+1%>. <%=question.body%>
 	</div>

@@ -1,10 +1,1 @@
-<h1 class="title">Thanks for taking the "<%= @survey.title %>" survey, <%= current_user.username %>!</h1>
-<div id="thank-you-summary">
-<p>
-  <% @taken_summary.each do |question, answer| %>
-    <p>Question: <%= question %></p>
-    <p>You chose: <%= answer %></p>
-  <% end %>
-</p>
-</div>
-<p><a href='/surveys'>Take another Survey!</a></p>
+<div class="question_wrapper"><%= erb :"/taken_surveys/_show_answers", locals: {survey: @survey, taken_summary: @taken_summary} %></div>

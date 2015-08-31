@@ -30,13 +30,13 @@ end
 
 get '/questions/:id/edit' do
   @question = Question.find_by(id: params[:id])
-  redirect "/" unless authorized?(@question.user.id)
+  redirect "/" unless authorized?(@question.survey.creator.id)
   erb :'questions/edit'
 end
 
 put '/questions/:id' do
   question = Question.find_by(id: params[:id])
-  question.update_attributes(params[:question])
+  question.update_attributes(body: params[:body])
   redirect "/questions/#{question.id}/choices/edit"
 end
 

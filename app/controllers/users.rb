@@ -16,14 +16,14 @@ post '/users' do
 end
 
 get '/users/:id' do
+  redirect "/" unless authorized?(params[:id].to_i)
   @user = User.find_by(id: params[:id])
-  redirect "/" unless authorized?(current_user.id)
   erb :'users/show'
 end
 
 get '/users/:id/edit' do
+  redirect "/" unless authorized?(params[:id].to_i)
   @user = User.find_by(id: params[:id])
-  redirect "/" unless authorized?(@user.id)
   erb :'users/edit'
 end
 

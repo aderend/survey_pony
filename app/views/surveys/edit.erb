@@ -2,7 +2,7 @@
   <div id="edit_survey_form">
     <form action="/surveys/<%=@survey.id%>" method="post">
       <input type="hidden" name="_method" value="put">
-      <%= erb :'surveys/_form', locals: {survey: @survey} %>
+      <%= erb :'surveys/_edit_form', locals: {survey: @survey} %>
       <input type="submit" value="Edit Survey">
     </form>
 </div>
@@ -10,4 +10,4 @@
 <form action="/surveys/<%=@survey.id%>" method="post">
 	<input type="hidden" name="_method" value="delete">
 	<input type="submit" value="Delete survey">
-</form>	
+</form>

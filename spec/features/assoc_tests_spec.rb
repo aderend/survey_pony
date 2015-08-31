@@ -68,11 +68,11 @@ end
 describe Choice do
 
 	it 'should belong to a questions' do
-		should belong_to(:survey)
+		should belong_to(:question)
 	end
 
 	it 'should belong to a survey' do
-		should belong_to(:survey)
+		should belong_to(:survey).through(:questions)
 	end
 
 	it 'should have many selections' do

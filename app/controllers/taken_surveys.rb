@@ -8,7 +8,6 @@ get '/takensurveys/:id' do
   taken_survey = TakenSurvey.find_by(id: params[:id])
   @taken_summary = taken_survey.taken_summary
   @survey = taken_survey.survey
-  redirect '/something_bad_happened' unless taken_survey
   erb :'taken_surveys/show'
 end
 

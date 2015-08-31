@@ -1,14 +1,8 @@
-<div id='show-question'>
+
 <h1 class="title"><%=@question.survey.title%></h1>
-<p><%=@question.body%></p>
+
+<div class="question_wrapper">
+  <%= erb :"/questions/_draw_question", locals: {
+  question: @question, taken_survey: @taken_survey }%>
 </div>
-<form action="/selections" method="post">
-  <ul class="choice-list">
-  <input type="hidden" name="taken_survey_id" value="<%=@taken_survey.id%>">
-  <input type="hidden" name="question_id" value="<%=@question.id%>">
-  <% @question.choices.each do |choice| %>
-    <p><input type="radio" name="choice_id" value="<%=choice.id%>"><%=choice.body%></p>
-  <% end %>
-  </ul>
-  <input type="submit" value="Submit response">
-</form>
+
