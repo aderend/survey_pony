@@ -1,16 +1,16 @@
 <ul id="navlist">
   <div class = "justleft">
-  <a href="/"><img src="/img/logo-01.png"></a>
+    <a href="/"><img src="/img/logo-01.png"></a>
   </div>
 
   <%if logged_in?%>
-    <li class="nav"><a href='/users/<%=session[:user_id]%>'>Profile</a></li>
-    <li class="nav"><form action='/session' method='post'/>
-      <input type="hidden" name="_method" value="DELETE">
-      <input class="button" type='submit' value='Log Out'/>
-    </form></li>
+  <li class="nav"><a href='/users/<%=session[:user_id]%>'>Profile</a></li>
+  <li class="nav"><form action='/session' method='post'/>
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="button" type='submit' value='Log Out'/>
+  </form></li>
   <%else%>
-    <li class="nav"><a href="/login">Login</a></li>
-    <li class="nav"><a href="/signup">Sign Up</a></li>
+  <li class="nav"><a href="/login">Login</a></li>
+  <li class="nav"><a href="/signup">Sign Up</a></li>
   <%end%>
 </ul>

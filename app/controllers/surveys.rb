@@ -5,7 +5,6 @@ end
 
 get "/surveys/new" do
   @survey = Survey.new
-  
   erb :"surveys/new"
 end
 
@@ -17,11 +16,11 @@ end
 post "/surveys" do
   @survey = current_user.created_surveys.build(params[:survey])
   if @survey.save
-    if request.xhr?  
+    if request.xhr?
       erb :'questions/_first', layout: false, locals: {survey: @survey}
-    else  
+    else
       redirect "/surveys/#{survey.id}/questions/new"
-    end  
+    end
   else
     flash[:error] = ['You need a title and a category!']
     redirect "/surveys/new"

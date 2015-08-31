@@ -1,12 +1,12 @@
-<h2>Edit Question</h2>
-	<div id="edit_question_form">
-		<form action="/questions/<%=@question.id%>" method="post">
-			<input type="hidden" name="_method" value="put">
-      <label for="title">Title</label>
-      <input id ="title" type="text" name="survey[title]" value="<%=@question.survey.title%>">
-			<input type="submit" value="Update question">
-		</form>
-	</div>
+<p class="title">Edit Question</p>
+<div id="edit_question_form">
+	<form action="/questions/<%=@question.id%>" method="post">
+		<input type="hidden" name="_method" value="put">
+		<label for="title">Title</label>
+		<input id ="title" type="text" name="survey[title]" value="<%=@question.survey.title%>">
+		<input type="submit" value="Update question">
+	</form>
+</div>
 
 <form id="delete-questions" action="/questions/<%=@question.id%>" method="post">
 	<input type="hidden" name="_method" value="delete">

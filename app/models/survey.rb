@@ -19,6 +19,7 @@ class Survey < ActiveRecord::Base
   end
 
   def percentage(choice)
+    return 0 if total_takers == 0
     num = num_times_chosen(choice)
     ((num/(total_takers * 1.0))*100).round(2)
   end

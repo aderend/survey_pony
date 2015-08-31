@@ -9,13 +9,13 @@ post '/choices' do
   @choices = @question.add_choices(params[:choice])
   if request.xhr?
     if params[:finish_survey]
-      erb :'surveys/_finish', layout: false, locals: {survey: @survey} if params[:finish_survey]
+      erb :'surveys/_finish', layout: false, locals: {survey: @survey}
     else
       erb :'questions/_form', layout: false, locals: {survey: @survey}
-    end  
+    end
   else
     redirect "/surveys/#{@question.survey.id}/questions/new"
-  end  
+  end
 end
 
 get '/questions/:id/choices/edit' do
