@@ -126,4 +126,8 @@ ul#navlist li a {
   padding: 0.2em 1em;
   text-decoration: none;
   border-right: 1px solid #f9f4eb;
+
+
+#finish-survey-form {
+  display:none;
 }

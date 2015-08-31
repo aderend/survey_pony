@@ -1,25 +1,30 @@
 get "/surveys" do
   @surveys = Survey.limit(25).order(updated_at: :desc)
-  erb :"/surveys/index"
+  erb :"surveys/index"
 end
 
 get "/surveys/new" do
   @survey = Survey.new
-  erb :"/surveys/new"
+  
+  erb :"surveys/new"
 end
 
 get "/surveys/:id" do
   @survey = Survey.find_by(id: params[:id])
-  erb :"/surveys/show"
+  erb :"surveys/show"
 end
 
 post "/surveys" do
-  survey = current_user.created_surveys.new(params[:survey])
-  if survey.save
-    redirect "/surveys/#{survey.id}/questions/new"
+  @survey = current_user.created_surveys.build(params[:survey])
+  if @survey.save
+    if request.xhr?  
+      erb :'questions/_first', layout: false, locals: {survey: @survey}
+    else  
+      redirect "/surveys/#{survey.id}/questions/new"
+    end  
   else
     flash[:error] = ['You need a title and a category!']
-    erb :'surveys/new'
+    redirect "/surveys/new"
   end
 end
 

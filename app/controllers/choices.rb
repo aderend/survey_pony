@@ -5,8 +5,17 @@ end
 
 post '/choices' do
   @question = Question.find_by(id: params[:question_id])
-  @question.add_choices(params[:choice])
-  redirect "/surveys/#{@question.survey.id}/questions/new"
+  @survey = @question.survey
+  @choices = @question.add_choices(params[:choice])
+  if request.xhr?
+    if params[:finish_survey]
+      erb :'surveys/_finish', layout: false, locals: {survey: @survey} if params[:finish_survey]
+    else
+      erb :'questions/_form', layout: false, locals: {survey: @survey}
+    end  
+  else
+    redirect "/surveys/#{@question.survey.id}/questions/new"
+  end  
 end
 
 get '/questions/:id/choices/edit' do
