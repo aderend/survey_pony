@@ -4,7 +4,7 @@ class Survey < ActiveRecord::Base
   has_many :choices, through: :questions
   has_many :taken_surveys
 
-  validates_presence_of :title, :category
+  validates_presence_of :title
 
   def next_question(current_question)
     questions.find_by(id:current_question.id+1)

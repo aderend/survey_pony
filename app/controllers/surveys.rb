@@ -18,7 +18,7 @@ post "/surveys" do
   @survey = current_user.created_surveys.build(params[:survey])
   if @survey.save
     if request.xhr?  
-      erb :'questions/_form', layout: false, locals: {survey: @survey}
+      erb :'questions/_first', layout: false, locals: {survey: @survey}
     else  
       redirect "/surveys/#{survey.id}/questions/new"
     end  

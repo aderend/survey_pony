@@ -1,8 +1,6 @@
-<div id="new-question-form">
-	<form id='add-question' action="/questions" method="POST">
-	<label for="body">Question : </label>
-	<input id="body" type="text" name="body">
-	<input type="hidden" name="survey_id" value="<%=@survey.id%>">
-	<input id="question-submit" type="submit" value="Create Question">
-	</form>
-</div>
+<form id='add-question' action="/questions" method="POST">
+<label for="body">Question : </label>
+<input id="body" type="text" name="body">
+<input type="hidden" name="survey_id" value="<%=@survey.id%>">
+<input id="question-submit" type="submit" value="Create Question">
+</form>

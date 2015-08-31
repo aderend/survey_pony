@@ -8,17 +8,14 @@ $('document').ready(function(){
       data: $this.serialize(),
       method: $this.attr('method')
     }).done(function(response){
+      $('#new-survey-form').remove();
       $('#add-questions-div').append(response);
-      debugger
-      // $('#add-choice-div').append(response);
-      // $('#finish-survey-form').toggle();
-      // $('#question-submit').hide();
     }).fail(function() {
       console.log("Didn't add new survey correctly")
     });
   });
 
-  $("#new-question-form").on("submit", "#add-question",function(e){
+  $("#add-questions-div").on("submit", "#add-question",function(e){
     e.preventDefault();
     $this = $(this);
     $.ajax({
