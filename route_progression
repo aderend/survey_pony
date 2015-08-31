@@ -1,0 +1,10 @@
+GET /question/new
+POST /questions (redirect....)
+GET /questions/1/choices/new
+POST /questions/1/choices (redirect...)
+GET /questions/1/new
+
+
+--------
+
+

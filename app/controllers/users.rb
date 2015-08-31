@@ -16,19 +16,18 @@ post '/users' do
 end
 
 get '/users/:id' do
-  redirect "/" unless authorized?(params[:id].to_i)
+  redirect "/" unless authorized?(params[:id])
   @user = User.find_by(id: params[:id])
   erb :'users/show'
 end
 
 get '/users/:id/edit' do
-  redirect "/" unless authorized?(params[:id].to_i)
+  redirect "/" unless authorized?(params[:id])
   @user = User.find_by(id: params[:id])
   erb :'users/edit'
 end
 
 put '/users' do
-  @user = User.find_by(id: session[:user_id])
-  @user.update_attributes(params[:user])
+  current_user.update_attributes(params[:user])
   redirect '/'
 end

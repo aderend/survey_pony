@@ -18,6 +18,17 @@ post '/choices' do
   end
 end
 
+
+# Alternate implementation
+# post '/choices' do
+#   @question = Question.find_by(id: params[:question_id])
+#   @choices = @question.add_choices(params[:choice])
+#   redirect "/surveys/#{@question.survey.id}/questions/new" unless request.xhr?
+#   partial = params[:finish_survey] ? :'surveys/_finish' : :'questions/_form',
+#   erb  partial, layout: false, locals: {survey: @question.survey}
+# end
+
+
 get '/questions/:id/choices/edit' do
   @question = Question.find_by(id: params[:id])
   redirect "/" unless authorized?(@question.survey.creator.id)
