@@ -1,7 +1,7 @@
 <div id="create-new-survey">
 
 	<h1 id="create-survey-title">Create a New Survey</h1>
-	<div id="new_survey_form">
+	<div id="new-survey-form">
 		<form id='new-survey' action="/surveys" method="POST">
 		<label for="title">Title</label>
 		<input id ="title" type="text" name="survey[title]" value="<%=@survey.title%>">
@@ -11,9 +11,7 @@
 
 	<div id="add-questions-div">
 		<h2>Add Questions</h2>
-		<div id="new-question-form">
 			<%= erb :"questions/_form", locals: {question: @question, survey: @survey} %>
-		</div>
 	</div>	
 
 	<div id="choices-finish">	
