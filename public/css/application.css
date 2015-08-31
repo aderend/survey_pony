@@ -9,7 +9,7 @@ header {
 
 body {
   background-color: #1EB9BF;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Futura', sans-serif;
 }
 
 .justright {
@@ -49,22 +49,20 @@ th {
 }
 
 .button {
-     background:none!important;
-     border:none;
-     padding:0!important;
-     font: inherit;
-    color: #DA273A;
+  background:none!important;
+  border:none;
+  padding:0!important;
+  font: inherit;
+  color: black;
 }
 
-/*
+
 ul#navlist {
   padding: 0;
   margin: 0;
   list-style-type: none;
-  float: left;
+  float: right;
   width: 100%;
-  background-color: #1eb9bf;
-  color: #f9f4eb;
 }
 
 ul#navlist li {
@@ -72,31 +70,23 @@ ul#navlist li {
 }
 
 ul#navlist form {
-  float: left;
+  margin-top: 1.9em;
+  font-size: 150%;
+  float: right;
   width: 5em;
   padding: 0.2em 1em;
   text-decoration: none;
   border-right: 1px solid #f9f4eb;
-
+  color: #F9F4EB;
 }
 
-ul#navlist li form:hover {
-  background-color: #da273a;
-  color: #f9f4eb;
-}
-
-ul#navlist a {
-  float: left;
+ul#navlist li a {
+  margin-top: 1.9em;
+  font-size: 150%;
+  float: right;
   width: 5em;
-  background-color: #1eb9bf;
-  color: #f9f4eb;
+  color: black;
   padding: 0.2em 1em;
   text-decoration: none;
   border-right: 1px solid #f9f4eb;
 }
-
-ul#navlist li a:hover {
-  background-color: #da273a;
-  color: #f9f4eb;
-}
-*/
