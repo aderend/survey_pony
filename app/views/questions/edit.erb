@@ -2,7 +2,8 @@
 	<div id="edit_question_form">
 		<form action="/questions/<%=@question.id%>" method="post">
 			<input type="hidden" name="_method" value="put">
-			<%= erb :'questions/_form', locals: {question: @question} %>
+      <label for="title">Title</label>
+      <input id ="title" type="text" name="survey[title]" value="<%=@question.survey.title%>">
 			<input type="submit" value="Update question">
 		</form>
 	</div>
@@ -10,6 +11,6 @@
 <form id="delete-questions" action="/questions/<%=@question.id%>" method="post">
 	<input type="hidden" name="_method" value="delete">
 	<input type="submit" value="Delete question">
-</form>	
+</form>
 
 <p><a href="/users/<%=current_user.id%>">Finish editing survey</a></p>
