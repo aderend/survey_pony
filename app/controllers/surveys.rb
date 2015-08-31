@@ -15,12 +15,16 @@ get "/surveys/:id" do
 end
 
 post "/surveys" do
-  survey = current_user.created_surveys.new(params[:survey])
-  if survey.save
-    redirect "/surveys/#{survey.id}/questions/new"
+  @survey = current_user.created_surveys.build(params[:survey])
+  if @survey.save
+    if request.xhr?  
+      erb :'questions/_form', layout: false, locals: {survey: @survey}
+    else  
+      redirect "/surveys/#{survey.id}/questions/new"
+    end  
   else
     flash[:error] = ['You need a title and a category!']
-    erb :'surveys/new'
+    redirect "/surveys/new"
   end
 end
 

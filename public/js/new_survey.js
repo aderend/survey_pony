@@ -8,6 +8,7 @@ $('document').ready(function(){
       data: $this.serialize(),
       method: $this.attr('method')
     }).done(function(response){
+      $('#add-questions-div').append(response);
       debugger
       // $('#add-choice-div').append(response);
       // $('#finish-survey-form').toggle();
