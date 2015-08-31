@@ -133,11 +133,16 @@ ul#navlist li a {
   display:none;
 }
 
-th, td{
+th {
   padding: 5px;
-  width: 100%;
 }
 
 td {
   color: #126b6b;
+  width: 33%;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
