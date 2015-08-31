@@ -1,7 +1,27 @@
-<h1>Create New Survey</h1>
-	<div id="new_survey_form">
-		<form action="/surveys" method="POST">
-			<%= erb :'surveys/_new_form', locals: {survey: @survey} %>
+<div id="create-new-survey">
+<div id="new-survey-form">
+	<p class="title">Create New Survey</p>
+		<form id="new-survey" action="/surveys" method="POST">
+			Title
+			<input type="text" name="survey[title]">
 			<input type="submit" value="Create Survey">
 		</form>
+	</div>
+
+	<div id="add-questions-div">
+	</div>	
+
+	<div id="choices-finish">	
+		<div id='add-choice-div'>
+		</div>
+
+		<div id="finish-survey-form">
+		<form id="finish-survey" action="/choices" method="post">
+			<input type="hidden" name="finish_survey" value="true">
+			<input id="finish-survey-submit" type="submit" value="Finish survey">
+		</form>	
+		</div>
+	</div>	
+
+</div>	
 </div>

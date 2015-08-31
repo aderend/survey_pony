@@ -6,9 +6,9 @@ sextina = User.create!(username: "sextina_aqaufina", email: "sextina@dolphin.com
 neal = User.create!(username: "neal_mcbeal", email: "neal@seal.com", password: "1234")
 
 
-survey_1 = bojack.created_surveys.create(title: "Bojack Horseman, One Trick Pony", category: "horse")
+survey_1 = bojack.created_surveys.create(title: "Bojack Horseman, One Trick Pony")
 
-survey_2 = bojack.created_surveys.create(title: "OR", category: Faker::Commerce.department)
+survey_2 = bojack.created_surveys.create(title: "OR")
 
 
 s1_q1 = survey_1.questions.create(body:"Which folder on Bojack's laptop would you be most inclined to open?")

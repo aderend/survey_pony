@@ -68,3 +68,7 @@ ul#navlist li a:hover {
   background-color: #da273a;
   color: #f9f4eb;
 }
+
+#finish-survey-form{
+  display:none;
+}

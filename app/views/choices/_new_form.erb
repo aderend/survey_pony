@@ -1,0 +1,9 @@
+<form id='new-choice' action="/choices" method="POST">
+  <input type="hidden" name="question_id" value="<%=@question.id%>">
+	<% 4.times.with_index do |choice, i| %>
+		<label for="body">Choice <%=i+1%>: </label>
+		<input type="text" name="choice[<%=i%>][body]">
+	<% end %>
+	<input type="hidden" name="question_id" value="<%=@question.id%>">
+	<input type="submit" value="Add Choices">
+</form>
