@@ -13,7 +13,7 @@
 		<div id="choice_stat">
 			<div><%=choice.body%><div>
 				<p><%=@survey.num_times_chosen(choice)%></p>
-				<p><%=@survey.percentage(choice)%> % </p>
+				<p class="stats-bar"><%=@survey.percentage(choice)%></p>
 			</div>
 			<%end%>
 		</div>

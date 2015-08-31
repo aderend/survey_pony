@@ -12,6 +12,19 @@ $('document').ready(function(){
     }).fail(function() {
       alert("Error")
     });
-
   });
+
+  var stats = $('.stats-bar')
+
+  for (var i=0; i<stats.length; i++) {
+    debugger
+    $(stats[i]).goalProgress(
+    {
+    goalAmount: 100,
+    currentAmount: parseInt($(stats[i]).text()),
+    textBefore: '$',
+    textAfter: ' raised'
+    });
+  }  
+
 });
