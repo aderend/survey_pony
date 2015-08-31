@@ -8,8 +8,8 @@ post '/choices' do
   @survey = @question.survey
   @choices = @question.add_choices(params[:choice])
   if request.xhr?
-    if params[:finish_survey]=="true"
-      erb :'surveys/_finish', layout: false, locals: {survey: @survey}
+    if params[:finish_survey]
+      erb :'surveys/_finish', layout: false, locals: {survey: @survey} if params[:finish_survey]
     else
       erb :'questions/_form', layout: false, locals: {survey: @survey}
     end  
